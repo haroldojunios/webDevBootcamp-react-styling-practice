@@ -11,20 +11,27 @@ import ReactDOM from "react-dom";
 
 const hour = new Date().getHours();
 let greeting = "";
+const customStyle = {};
 
 if (hour < 12) {
   greeting = "Good morning";
+  customStyle.color = "red";
+  customStyle.borderColor = "red";
 }
 else if (hour < 18) {
   greeting = "Good afternoon";
+  customStyle.color = "green";
+  customStyle.borderColor = "green";
 }
 else {
   greeting = "Good evening";
+  customStyle.color = "blue";
+  customStyle.borderColor = "blue";
 }
 
 ReactDOM.render(
   <div>
-    <h1 className="heading">{greeting}</h1>
+    <h1 className="heading" style={customStyle}>{greeting}</h1>
   </div>,
   document.getElementById("root")
 );
