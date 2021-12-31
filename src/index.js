@@ -9,9 +9,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+const hour = new Date().getHours();
+let greeting = "";
+
+if (hour < 12) {
+  greeting = "Good morning";
+}
+else if (hour < 18) {
+  greeting = "Good afternoon";
+}
+else {
+  greeting = "Good evening";
+}
+
 ReactDOM.render(
   <div>
-    <h1>Good morning</h1>
+    <h1>{greeting}</h1>
   </div>,
   document.getElementById("root")
 );
